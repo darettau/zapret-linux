@@ -1,0 +1,17 @@
+bin/nfqws
+bin/*.bin
+zapret-src/nfq/nfqws
+zapret-src/**/*.o
+
+tg-proxy/secret.txt
+lists/youtube-winner.txt
+**/__pycache__/
+diagnose-report.txt
+youtube-tune-report.txt
+
+*.log
+*.pid
+
+*~
+*.swp
+.DS_Store

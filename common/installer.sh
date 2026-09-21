@@ -670,8 +670,8 @@ check_prerequisites_linux()
 		elif [ -x "$YUM" ] ; then
 			"$YUM" -y install $PKGS || no_prereq_exit
 		elif [ -x "$PACMAN" ] ; then
-			"$PACMAN" -Syy
-			"$PACMAN" --noconfirm -S $PKGS || no_prereq_exit
+			# arch does not support partial upgrades. -Sy followed by -S can break the system
+			"$PACMAN" -Syu --needed --noconfirm $PKGS || no_prereq_exit
 		elif [ -x "$ZYPPER" ] ; then
 			"$ZYPPER" --non-interactive install $PKGS || no_prereq_exit
 		elif [ -x "$EOPKG" ] ; then

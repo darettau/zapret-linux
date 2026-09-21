@@ -38,7 +38,7 @@ install_deps() {
     case "$DISTRO" in
         arch)
             log_info "Установка пакетов через pacman..."
-            pacman -Sy --needed --noconfirm \
+            pacman -Syu --needed --noconfirm \
                 git gcc make iptables ipset libnetfilter_queue zlib libcap
             ;;
         debian)
